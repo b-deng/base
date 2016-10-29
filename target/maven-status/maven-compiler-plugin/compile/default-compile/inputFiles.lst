@@ -1,1 +1,14 @@
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/dao/CarDao.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/entity/Medication.java
 /Users/dengbin/Documents/workspace/base/src/main/java/com/struts/learn/TestAction.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/service/FAPHService.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/action/FAPHAction.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/entity/CaseInformation.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/entity/DrugInfo.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/action/CarAction.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/entity/CarInfo.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/dao/CaseInfoDao.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/entity/FirstAidPatientHistory.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/dao/FAPHDao.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/dao/PatDao.java
+/Users/dengbin/Documents/workspace/base/src/main/java/com/sinba/faph/service/CarService.java
