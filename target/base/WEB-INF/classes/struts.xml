@@ -17,7 +17,39 @@
             <result name="success">index.jsp</result>
             <result name="login">login.jsp</result>
         </action>
-
+<!-- 救护车 -->
+		<action name="faph" class="com.sinba.faph.action.FAPHAction">
+			<result type="json">
+				<param name="root">faph</param>
+			</result>
+			<result type="json" name="saveSuccess">
+				<param name="includeProperties">phNo</param>
+			</result>
+			<result type="json" name="options">
+				<param name="root">options</param>
+			</result>
+			<result type="json" name="drugs">
+				<param name="root">drugs</param>
+			</result>
+			<result type="json" name="caseInfos">
+				<param name="root">caseInfos</param>
+			</result>
+			<result type="json" name="caseMap">			    
+				<param name="root">caseMap</param>
+			</result>
+			<result type="json" name="carNo">
+				<param name="includeProperties">carNo,hospitalId,carLic</param>
+			</result>
+			<result type="json" name="allOptions">
+				<param name="root">variables</param>
+			</result>
+		</action>
+		<action name="faph" class="com.sinba.faph.action.CarAction">
+			<result type="json" name="cars">			    
+				<param name="userId">userId</param>
+			</result>
+			</action>
+			
     </package>
 
 </struts>

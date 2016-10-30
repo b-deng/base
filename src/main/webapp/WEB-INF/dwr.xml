@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC 
+	"-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN" 
+	"http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+    <allow>
+    	<create creator="spring" javascript="PatientService" scope="application">
+    		<param name="beanName" value="patientService"/>
+    	</create> 
+    	<create creator="spring" javascript="SinglePatientService" scope="application">
+    		<param name="beanName" value="singlePatientService"/>
+    	</create> 
+    	<convert converter="bean" match="com.sinba.telemedicine.dto.PatientDTO">
+    		<param name="excludeProperties">
+    			wavedataEcg1,wavedataEcg2,wavedataSpo2,wavedataResp
+    		</param>
+    	</convert>
+
+    </allow>
+
+    <signatures>
+        <![CDATA[
+
+        ]]>
+    </signatures>
+</dwr>
