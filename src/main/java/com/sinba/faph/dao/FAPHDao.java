@@ -15,7 +15,7 @@ import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.springframework.orm.*;
 
-import com.sinba.common.dao.BaseDAOImplHibernate;
+//import com.sinba.common.dao.BaseDAOImplHibernate;
 import com.sinba.faph.entity.DrugInfo;
 import com.sinba.faph.entity.FirstAidPatientHistory;
 import org.springframework.orm.hibernate3.HibernateCallback;

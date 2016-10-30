@@ -192,11 +192,13 @@
     <version>1.0.1.Final</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.compass-project/compass -->
-		<dependency>
-			<groupId>org.compass-project</groupId>
-			<artifactId>compass</artifactId>
-			<version>2.0.1</version>
-		</dependency>
+<dependency>
+    <groupId>org.compass-project</groupId>
+    <artifactId>compass</artifactId>
+    <version>2.2.0</version>
+</dependency>
+
+
 <dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
@@ -209,6 +211,28 @@
 			<artifactId>javax.persistence</artifactId>
 			<version>2.1.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-json-plugin -->
+<dependency>
+    <groupId>org.apache.struts</groupId>
+    <artifactId>struts2-json-plugin</artifactId>
+    <version>2.3.16.3</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework/spring -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring</artifactId>
+    <version>2.5.6</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>3.0.5.RELEASE</version>
+		</dependency>
+
+
+
+
 		
   </dependencies>
   <build>

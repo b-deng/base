@@ -11,7 +11,7 @@ import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.HibernateCallback;
 
-import com.sinba.common.dao.BaseDAOImplHibernate;
+//import com.sinba.common.dao.BaseDAOImplHibernate;
 import com.sinba.faph.entity.CaseInformation;
 
 public class CaseInfoDao extends BaseDAOImplHibernate<CaseInformation> {

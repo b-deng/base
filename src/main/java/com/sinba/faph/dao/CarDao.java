@@ -16,11 +16,15 @@ import java.util.List;
 
 //import org.apache.commons.lang.time.DateUtils;
 import org.hibernate.HibernateException;
-//import org.hibernate.SQLQuery;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
-//import org.springframework.orm.*;
+import org.hibernate.SessionFactory;
+import org.springframework.orm.*;
 
-import com.sinba.common.dao.BaseDAOImplHibernate;
+//import com.sinba.common.dao.BaseDAOImplHibernate;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate3.SessionFactoryUtils;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport; 
 import com.sinba.faph.entity.CarInfo;
 
 public class CarDao extends BaseDAOImplHibernate<CarInfo> {
@@ -110,13 +114,14 @@ public class CarDao extends BaseDAOImplHibernate<CarInfo> {
 	public List excuteProcedureKeepColumnName(String sql, Integer start,
 			Integer end, Integer carNumber, String startTime, String endTime,
 			Integer timeSeq) throws HibernateException, SQLException {
-		logger.debug("querySql:" + sql + " start: " + start + " end: " + end
-				+ " carNumber: " + carNumber + " timeSeq: " + timeSeq
-				+ " StartTime" + startTime + " EndTime:" + endTime);
+		//logger.debug("querySql:" + sql + " start: " + start + " end: " + end
+		//		+ " carNumber: " + carNumber + " timeSeq: " + timeSeq
+		//		+ " StartTime" + startTime + " EndTime:" + endTime);
 		List rows = null;
 		Session session = getSession();
 		@SuppressWarnings("deprecation")
-		Connection conn = session.connection();
+		//Connection conn = session.connection();
+		Connection conn = SessionFactoryUtils.getDataSource(getSessionFactory()).getConnection();
 		CallableStatement ps = conn.prepareCall(sql);
 		ps.setInt(1, start);
 		ps.setInt(2, end);
@@ -151,11 +156,12 @@ public class CarDao extends BaseDAOImplHibernate<CarInfo> {
 
 	public List excuteSqlQueryKeepColumnName(String sql)
 			throws HibernateException, SQLException {
-		logger.debug("querySql:" + sql);
+		//logger.debug("querySql:" + sql);
 		List rows = null;
 		Session session = getSession();
 		@SuppressWarnings("deprecation")
-		Connection conn = session.connection();
+		//Connection conn = session.connection();
+		Connection conn = SessionFactoryUtils.getDataSource(getSessionFactory()).getConnection();
 		PreparedStatement ps = conn.prepareStatement(sql);
 		sql = sql.toLowerCase();
 		ResultSet rs = null;
@@ -169,12 +175,13 @@ public class CarDao extends BaseDAOImplHibernate<CarInfo> {
 	public List excuteProcedureKeepColumnName(String sql, Integer start,
 			Integer end, String condition, String sort)
 			throws HibernateException, SQLException {
-		logger.debug("querySql:" + sql + " start: " + start + " end: " + end
-				+ " condition: " + condition + " sort: " + sort);
+		//logger.debug("querySql:" + sql + " start: " + start + " end: " + end
+		//		+ " condition: " + condition + " sort: " + sort);
 		List rows = null;
 		Session session = getSession();
 		@SuppressWarnings("deprecation")
-		Connection conn = session.connection();
+		//Connection conn = session.connection();
+		Connection conn = SessionFactoryUtils.getDataSource(getSessionFactory()).getConnection();
 		CallableStatement ps = conn.prepareCall(sql);
 		ps.setInt(1, start);
 		ps.setInt(2, end);

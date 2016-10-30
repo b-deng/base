@@ -7,7 +7,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.sinba.common.util.StringUtils;
+//import com.sinba.common.util.StringUtils;
+import org.springframework.util.StringUtils;
 import com.sinba.faph.dao.CaseInfoDao;
 import com.sinba.faph.dao.FAPHDao;
 import com.sinba.faph.entity.CaseInformation;
