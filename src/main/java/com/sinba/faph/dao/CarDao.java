@@ -24,10 +24,10 @@ import org.springframework.orm.*;
 //import com.sinba.common.dao.BaseDAOImplHibernate;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.SessionFactoryUtils;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport; 
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.sinba.faph.entity.CarInfo;
 
-public class CarDao extends BaseDAOImplHibernate<CarInfo> {
+public class CarDao extends HibernateDaoSupport {
 
 	public List<CarInfo> GetCarList(Integer userId) throws HibernateException,
 			SQLException {

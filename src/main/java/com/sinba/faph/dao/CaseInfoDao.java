@@ -10,11 +10,11 @@ import org.hibernate.HibernateException;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.HibernateCallback;
-
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 //import com.sinba.common.dao.BaseDAOImplHibernate;
 import com.sinba.faph.entity.CaseInformation;
 
-public class CaseInfoDao extends BaseDAOImplHibernate<CaseInformation> {
+public class CaseInfoDao extends HibernateDaoSupport {
 
 	public List<CaseInformation> findCaseInfos(final String caseName) {
 		String hql = "from CaseInformation c where c.parent is not null and c.parent.caseName = ?";

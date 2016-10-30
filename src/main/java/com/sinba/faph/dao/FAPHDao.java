@@ -9,19 +9,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang.time.DateUtils;
+//import org.apache.commons.lang.time.DateUtils;
 import org.hibernate.HibernateException;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
-import org.springframework.orm.*;
+//import org.springframework.orm.*;
 
 //import com.sinba.common.dao.BaseDAOImplHibernate;
 import com.sinba.faph.entity.DrugInfo;
 import com.sinba.faph.entity.FirstAidPatientHistory;
 import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-
-public class FAPHDao extends BaseDAOImplHibernate<FirstAidPatientHistory> {
+public class FAPHDao extends HibernateDaoSupport {
 
 	public void updateTblCar(final String phNo, final String carNo) {
 		final String sql = "UPDATE tblCar SET CurrPatNumber= ? WHERE CarNumber = ?";		
@@ -33,6 +33,33 @@ public class FAPHDao extends BaseDAOImplHibernate<FirstAidPatientHistory> {
 				q.setString(1, carNo);
 				q.executeUpdate();
 				return null;
+			}
+		});
+	}
+	public void merge(final FirstAidPatientHistory entity)
+	{
+		getHibernateTemplate().execute( new HibernateCallback() {
+			public Object doInHibernate(Session s)
+					throws HibernateException, SQLException {
+				s.merge(entity);
+				
+				return null;
+			}
+		});
+	}
+	public FirstAidPatientHistory findById(final String phNo)
+	{
+		final String sql = "select * from tblPat where tblPat.PatNumber=?";
+		return getHibernateTemplate().execute( new HibernateCallback() {
+			public Object doInHibernate(Session s)
+					throws HibernateException, SQLException {
+				SQLQuery q = s.createSQLQuery(sql);
+				q.setString(0, phNo);
+				List<FirstAidPatientHistory> data = q.list();
+				if (data.size() > 0)
+					return data.get(0);
+				else
+					return null;
 			}
 		});
 	}
